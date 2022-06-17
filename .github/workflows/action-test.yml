@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Hello
         id: hello
-        uses: morikiyo/hello-world-docker-action
+        uses: morikiyo/hello-world-docker-action@main
         with:
           who-to-greet: 'RUBY'
