@@ -1,0 +1,19 @@
+name: Action Test
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello
+        id: hello
+        uses: morikiyo/hello-world-docker-action@main
+        with:
+          who-to-greet: 'RUBY'
